@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Attaque attaqueFortePikatchu = new Attaque("Fourme d'amber",87);
-        Attaque attaqueFaiblePikatchu = new Attaque("Camembert", 17);
+        Attaque attaqueFaiblePikatchu = new Attaque("Camembert", 12);
 
         Attaque attaqueForteRobert = new Attaque("Seroplex", 81);
         Attaque attaqueFaibleRobert = new Attaque("Xanax", 12);
@@ -15,12 +15,10 @@ public class Main {
         System.out.println(pikachu.getNom() + " et " + robert.getNom() + " entrent dans l'arène");
 
         while (pikachu.estEnVie() && robert.estEnVie()) {
-
             scanner.nextLine();
             pikachu.attaquePokemon(robert);
             scanner.nextLine();
             robert.attaquePokemon(pikachu);
-
-        }
+       }
     }
 }
