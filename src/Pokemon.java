@@ -83,4 +83,26 @@ public class Pokemon {
         this.attaqueForte = attaqueForte;
         this.attaqueFaible = attaqueFaible;
     }
+
+    public boolean estEnVie(){
+        if (this.getNbrPointsVie()>0) return true;
+        else return false;
+    }
+
+    public void attaquePokemon (Pokemon autrePokemon){
+
+        if (this.estEnVie()){
+            System.out.println();
+            System.out.println(this.getNom() + " attaque " + autrePokemon.getNom() + " avec " + this.getAttaqueFaible().getNom());
+            autrePokemon.setNbrPointsVie(autrePokemon.getNbrPointsVie()-attaqueFaible.getForce());
+            System.out.println("Il reste " + autrePokemon.getNbrPointsVie() + " à " + autrePokemon.getNom());
+            if(!autrePokemon.estEnVie()){
+                System.out.println(autrePokemon.getNom() + " est mort... RIP");
+                System.out.println("Longue vie au vainqueur " + this.getNom() + " !!!");
+            }
+        }
+
+
+    }
+
 }
